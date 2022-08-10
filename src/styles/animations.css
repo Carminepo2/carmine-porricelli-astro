@@ -1,0 +1,75 @@
+/* ------ LINE PORTRAIT ANIMATION ------ */
+
+.draw-line-portrait-animation {
+  stroke-dasharray: 6070;
+  stroke-dashoffset: 6070;
+  animation: draw-line-portrait;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-duration: 6s;
+  animation-delay: 0.1s;
+}
+
+@keyframes draw-line-portrait {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.erase-line-portrait-animation {
+  stroke-dashoffset: 0;
+  animation: erase-line-portrait;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-duration: 0.5s;
+}
+
+@keyframes erase-line-portrait {
+  to {
+    stroke-dasharray: 6070;
+    stroke-dashoffset: 6070;
+  }
+}
+
+/* ------ BLOB ANIMATION ------ */
+
+.blob-animation {
+  animation: blob;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(20%, -30%) scale(1.2);
+  }
+
+  50% {
+    transform: translate(-10%, 30%) scale(1.4);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* ------ TIMELINE ANIMATIONS ------ */
+
+.timeline-item-appear-animation {
+  animation: timeline-item-appear;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes timeline-item-appear {
+  to {
+    opacity: 1;
+    scale: 1;
+    transform: translateX(0);
+  }
+}
+

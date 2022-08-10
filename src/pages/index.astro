@@ -1,0 +1,27 @@
+---
+import { Header, JobExperiences, CTA, Footer } from "@/components/sections";
+import MainWrapper from "@/components/MainWrapper";
+
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/animations.css";
+import "@/styles/job-experiences-section.css";
+import BackgroundBlobs from "@/components/BackgroundBlobs";
+
+---
+
+<Layout title="Carmine Porricelli"
+	metaDescription="Sono uno stakanovista con anni di esperienza professionale alle spalle. Sempre disponibile per imparare, adoro lavorare in gruppo.">
+	<MainWrapper>
+		<BackgroundBlobs client:idle />
+		<div class="relative">
+
+			<Header />
+
+			<main>
+				<JobExperiences />
+				<CTA />
+			</main>
+			<Footer />
+		</div>
+	</MainWrapper>
+</Layout>

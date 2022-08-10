@@ -1,0 +1,15 @@
+{
+  "header": {
+    "toptitle": "Ciao, io sono",
+    "title": "Carmine Porricelli.",
+    "subtitle": "Sono uno stakanovista con anni di esperienza professionale alle spalle. Sviluppatore autodidatta. Sempre disponibile per imparare, adoro lavorare in gruppo.",
+    "ctaContactMe": "Contattami",
+    "ctaCV": "Scarica CV",
+    "localeSelectorSrOnlyLabel": "Seleziona una lingua",
+    "updated": "Aggiornato il "
+  },
+  "cta": {
+    "titleFirstRow": "Vuoi sapere di più?",
+    "titleSecondRow": "Contattami o scarica il mio CV."
+  }
+}

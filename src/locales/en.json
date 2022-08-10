@@ -1,0 +1,15 @@
+{
+  "header": {
+    "toptitle": "Hi, I'm",
+    "title": "Carmine Porricelli",
+    "subtitle": "I am a workaholic with years of professional experience. Self-taught developer. Always available to learn, I love working in a team.",
+    "ctaContactMe": "Contact Me",
+    "ctaCV": "Download CV",
+    "localeSelectorSrOnlyLabel": "Select a language",
+    "updated": "Last updated "
+  },
+  "cta": {
+    "titleFirstRow": "Do you want to know more?",
+    "titleSecondRow": "Contact me or download my CV."
+  }
+}
