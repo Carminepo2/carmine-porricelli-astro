@@ -11,7 +11,6 @@
   },
   "devDependencies": {
     "@astrojs/preact": "^1.0.1",
-    "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^1.0.0",
     "@types/react": "^18.0.17",
     "astro": "^1.0.2",
