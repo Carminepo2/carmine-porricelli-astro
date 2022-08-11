@@ -10,8 +10,8 @@ const Footer: FC = () => {
         <Logo className="h-12 w-auto" />
         <div className="mt-6 text-center text-xs md:mt-0 md:text-right md:text-sm ">
           <p>
-            Copyright &copy; {new Date().getFullYear()} Carmine Porricelli All
-            rights reserved.
+            Copyright {new Date().getFullYear()} &copy; Carmine Porricelli - All
+            Right Reserved.
           </p>
           <a
             className="text-primary-700 hover:underline dark:text-primary-400"
