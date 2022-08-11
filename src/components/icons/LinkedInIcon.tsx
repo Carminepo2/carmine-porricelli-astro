@@ -1,10 +1,8 @@
-import type { FunctionalComponent } from "preact"
+import type { FC, ComponentProps } from "react"
 
-interface Props {
-  className?: string
-}
+interface Props extends ComponentProps<"svg"> {}
 
-const LinkedInIcon: FunctionalComponent<Props> = (props) => {
+const LinkedInIcon: FC<Props> = (props) => {
   return (
     <svg
       aria-label="LinkedIn Icon"

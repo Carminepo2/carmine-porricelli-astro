@@ -1,23 +1,18 @@
-import type { FunctionalComponent, ComponentChildren } from "preact"
+import type { ComponentProps } from "preact"
+import type { JSXInternal } from "preact/src/jsx"
+
 import cn from "clsx"
 
-interface Props {
-  as?: string
-  className?: string
-  children: ComponentChildren
-  disabled?: boolean
-  onClick?: (event: Event) => void
-  href?: string;
-  target?: string;
-  rel?: string;
+interface Props<T extends keyof JSXInternal.IntrinsicElements> {
+  as?: T
 }
 
-const ButtonIcon: FunctionalComponent<Props> = ({
+const ButtonIcon = <T extends keyof JSXInternal.IntrinsicElements = "button">({
   as,
   className,
   children,
   ...props
-}) => {
+}: Props<T> & ComponentProps<T>) => {
   const Component = as || "button"
 
   return (

@@ -1,28 +1,28 @@
 ---
 import { Header, JobExperiences, CTA, Footer } from "@/components/sections";
 import MainWrapper from "@/components/MainWrapper";
-import i18next, { t } from "i18next";
+import i18next from "i18next";
 
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/animations.css";
 import "@/styles/job-experiences-section.css";
 import BackgroundBlobs from "@/components/BackgroundBlobs";
 
-i18next.changeLanguage("it");
+i18next.changeLanguage("en")
 ---
 
 <Layout>
-	<MainWrapper>
-		<BackgroundBlobs client:idle />
-		<div class="relative">
+  <MainWrapper>
+    <BackgroundBlobs client:idle />
+    <div class="relative">
 
-			<Header />
+      <Header />
 
-			<main>
-				<JobExperiences />
-				<CTA />
-			</main>
-			<Footer />
-		</div>
-	</MainWrapper>
+      <main>
+        <JobExperiences />
+        <CTA />
+      </main>
+      <Footer />
+    </div>
+  </MainWrapper>
 </Layout>

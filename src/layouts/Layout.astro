@@ -1,17 +1,11 @@
 ---
 import '@fontsource/roboto';
+import i18next, { t } from "i18next"
 
-export interface Props {
-	title: string;
-	metaDescription: string;
-	lang?: string;
-}
-
-const { title, metaDescription, lang = "en" } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
-<html lang={lang}>
+<html lang={i18next.language}>
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,8 +18,8 @@ const { title, metaDescription, lang = "en" } = Astro.props as Props;
 	<meta name="theme-color" content="#f59f0b" />
 	<script is:inline src="/js/check-theme.js" />
 
-	<title>{title}</title>
-	<meta name="description" content={metaDescription} />
+	<title>Carmine Porricelli</title>
+	<meta name="description" content={t("header.subtitle")} />
 </head>
 
 <body>

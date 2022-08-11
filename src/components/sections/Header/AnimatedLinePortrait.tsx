@@ -1,4 +1,4 @@
-import type { FunctionalComponent } from "preact"
+import type { FC } from "react"
 import { useState, useRef, useEffect } from "preact/hooks"
 import cn from "clsx"
 import RefreshIcon from "@/components/icons/RefreshIcon"
@@ -7,7 +7,7 @@ import ButtonIcon from "@/components/shared/ButtonIcon"
 const DRAW_ANIMATION_CLASSNAME = "draw-line-portrait-animation"
 const ERASE_ANIMATION_CLASSNAME = "erase-line-portrait-animation"
 
-const LinePortrait: FunctionalComponent = () => {
+const LinePortrait: FC = () => {
   const [isRestartButtonShown, setIsRestartButtonShown] = useState(false)
   const svgLinePathRef = useRef<SVGPathElement>(null)
   const timeoutRef = useRef<any>()

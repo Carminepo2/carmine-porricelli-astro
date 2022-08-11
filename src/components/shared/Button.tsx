@@ -1,50 +1,46 @@
-import type { ComponentChildren, FunctionalComponent } from "preact"
+import type { ComponentProps } from "preact"
+import type { JSXInternal } from "preact/src/jsx"
+
 import cn from "clsx"
 
-export type ButtonMode = "primary" | "secondary" | "outline"
+export type ButtonType = "primary" | "secondary" | "outline"
 export type ButtonSize = "small" | "medium" | "large"
 
-interface Props {
-  as?: string
-  className?: string
-  children: ComponentChildren
-  size?: ButtonSize
-  mode?: ButtonMode
-  disabled?: boolean,
-  onClick?: (event: Event) => void
-  href?: string;
-  download?: boolean;
+interface Props<T extends keyof JSXInternal.IntrinsicElements> {
+  as?: T
+  btnSize?: ButtonSize
+  btnType?: ButtonType
 }
 
-const Button: FunctionalComponent<Props> = ({
+const Button = <T extends keyof JSXInternal.IntrinsicElements = "button">({
   as,
   className,
   children,
-  size = "medium",
-  mode = "primary",
+  btnSize = "medium",
+  btnType = "primary",
   ...props
-}) => {
-  const Component = as || "button"
+}: Props<T> & ComponentProps<T>) => {
+  const Component = (as || "button") as T
 
   const buttonClassName = cn(
     "inline-block font-medium leading-normal rounded transition duration-200",
     {
       "dark:bg-primary-400 dark:hover:bg-primary-300 dark:text-gray-800 bg-primary-500 hover:bg-primary-400 text-white":
-        mode === "primary",
+        btnType === "primary",
       "bg-primary-50 hover:bg-primary-100 text-primary-600 dark:bg-opacity-10 hover:bg-opacity-20 dark:text-white":
-        mode === "secondary",
-      "hover:text-gray-700 border": mode === "outline",
+        btnType === "secondary",
+      "hover:text-gray-700 border": btnType === "outline",
     },
     {
-      "px-2.5 py-1.5 text-xs": size === "small",
-      "px-4 py-2 text-sm": size === "medium",
-      "px-6 py-3 text-base": size === "large",
+      "px-2.5 py-1.5 text-xs": btnSize === "small",
+      "px-4 py-2 text-sm": btnSize === "medium",
+      "px-6 py-3 text-base": btnSize === "large",
     },
     className
   )
 
   return (
-    // @ts-ignore
+    //@ts-ignore
     <Component className={buttonClassName} {...props}>
       {children}
     </Component>

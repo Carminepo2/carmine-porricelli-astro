@@ -1,9 +1,9 @@
-import type { FunctionalComponent } from "preact"
+import type { FC } from "react"
 import ButtonIcon from "@/components/shared/ButtonIcon"
 import { MoonIcon, SunIcon } from "@/components/icons"
 import useTheme from "@/hooks/useTheme"
 
-const DarkModeButtonToggle: FunctionalComponent = () => {
+const DarkModeButtonToggle: FC = () => {
   const [theme, toggleTheme] = useTheme()
 
   return (

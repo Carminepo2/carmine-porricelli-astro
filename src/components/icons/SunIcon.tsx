@@ -1,10 +1,8 @@
-import type { FunctionalComponent } from "preact"
+import type { FC, ComponentProps } from "react"
 
-interface Props {
-  className?: string
-}
+interface Props extends ComponentProps<"svg"> {}
 
-const SunIcon: FunctionalComponent<Props> = (props) => {
+const SunIcon: FC<Props> = (props) => {
   return (
     <svg
       fill="none"

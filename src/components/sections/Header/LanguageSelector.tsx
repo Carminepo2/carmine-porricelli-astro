@@ -1,31 +1,32 @@
-import type { FunctionalComponent } from "preact"
+import type { FC, ChangeEventHandler } from "react"
 
-const LanguageSelector: FunctionalComponent = () => {
-  // const handleChangeLanguage: React.ChangeEventHandler<HTMLSelectElement> = (
-  //   e
-  // ) => {
-  //   const locale = e.target.value
-  //   // router.push("/", "/", { locale: locale })
-  // }
+import i18next, { t } from "i18next"
+
+const LanguageSelector: FC = () => {
+  const handleChangeLanguage: ChangeEventHandler<HTMLSelectElement> = (e) => {
+    const locale = (e.target as HTMLSelectElement).value
+    //TODO
+    //window.history.pushState("/")
+  }
 
   return (
     <>
-      {/* <label htmlFor="language" className="sr-only">
+      <label htmlFor="language" className="sr-only">
         {t("header.localeSelectorSrOnlyLabel")}
       </label>
       <select
-        value={router.locale}
+        value={i18next.language}
         onChange={handleChangeLanguage}
         className="border-none bg-transparent font-medium"
         name="language"
         id="language"
       >
-        {router.locales!.map((language) => (
+        {i18next.languages.map((language) => (
           <option key={language} value={language}>
             {language.toUpperCase()}
           </option>
         ))}
-      </select> */}
+      </select>
     </>
   )
 }

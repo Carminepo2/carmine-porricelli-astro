@@ -1,4 +1,4 @@
-import type { FunctionalComponent } from "preact"
+import type { FC } from "react"
 import type { JobExperience } from "@/data/job-experiences"
 import cn from "clsx"
 
@@ -7,14 +7,14 @@ interface TimelineItemProps {
   isLatest?: boolean
 }
 
-const TimelineItem: FunctionalComponent<TimelineItemProps> = ({ experience, isLatest }) => {
+const TimelineItem: FC<TimelineItemProps> = ({ experience, isLatest }) => {
   return (
     <li>
       <div className="pb-8">
         <span
           className={cn(
             "absolute z-50 mt-2.5 flex h-3 w-3 rounded-full ring-8 ring-white dark:ring-gray-700 sm:mt-3",
-            { "bg-primary-400 inline-block": !isLatest }
+            { "inline-block bg-primary-400": !isLatest }
           )}
         >
           {isLatest && (
