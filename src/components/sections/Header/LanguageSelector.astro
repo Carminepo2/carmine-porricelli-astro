@@ -1,0 +1,23 @@
+---
+import { localizePath } from "@/utils/astro-i18next";
+import i18next from "i18next";
+
+const supportedLanguages = i18next.languages;
+const currentLanguage = i18next.language;
+
+const { pathname } = Astro.url;
+
+---
+
+<select class="bg-transparent border-none" onchange="location = this.value;">
+  {supportedLanguages.map((supportedLanguage: string) => {
+  let value = localizePath(pathname, supportedLanguage)
+  const label = supportedLanguage.toUpperCase()
+
+  return (
+  <option value={value} selected={supportedLanguage===currentLanguage}>
+    {label}
+  </option>
+  )
+  })}
+</select>

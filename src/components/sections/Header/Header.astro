@@ -2,7 +2,7 @@
 import Container from "@/components/shared/Container"
 import AnimatedLinePortrait from "./AnimatedLinePortrait"
 import Logo from "@/components/shared/Logo"
-import LanguageSelector from "./LanguageSelector"
+import LanguageSelector from "./LanguageSelector.astro"
 import { GithubIcon, LinkedInIcon } from "@/components/icons"
 import LINKS from "@/data/links"
 import ButtonIcon from "@/components/shared/ButtonIcon"
@@ -10,6 +10,7 @@ import DarkModeButtonToggle from "./DarkModeButtonToggle"
 import DownloadCVButton from "@/components/shared/DownloadCVButton"
 import ContactMeButton from "@/components/shared/ContactMeButton"
 import { t } from "i18next";
+
 ---
 
 <header class="pb-20">
@@ -17,7 +18,7 @@ import { t } from "i18next";
     <Logo className="h-12 w-12" />
     <div class="flex items-center space-x-2">
       <DarkModeButtonToggle client:load />
-      <LanguageSelector client:load />
+      <LanguageSelector />
     </div>
   </nav>
   <Container>

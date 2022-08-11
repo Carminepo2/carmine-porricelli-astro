@@ -1,7 +1,10 @@
 ---
 import '@fontsource/roboto';
 import i18next, { t } from "i18next"
+import { localizeUrl } from "@/utils/astro-i18next";
 
+const supportedLanguages = i18next.languages;
+const currentUrl = Astro.url.href;
 ---
 
 <!DOCTYPE html>
@@ -17,6 +20,10 @@ import i18next, { t } from "i18next"
 	<meta name="msapplication-TileColor" content="#f59f0b" />
 	<meta name="theme-color" content="#f59f0b" />
 	<script is:inline src="/js/check-theme.js" />
+
+	{supportedLanguages.map((supportedLanguage) => (
+	<link rel="alternate" hreflang={supportedLanguage} href={localizeUrl(currentUrl, supportedLanguage)} />
+	))}
 
 	<title>Carmine Porricelli</title>
 	<meta name="description" content={t("header.subtitle")} />
