@@ -1,13 +1,14 @@
 import type { FC } from "react"
-import type { JobExperience } from "@/data/job-experiences"
+import { t } from "i18next"
 import cn from "clsx"
+import type JobExperience from "@/types/JobExperience"
 
-interface TimelineItemProps {
-  experience: JobExperience
+interface Props {
+  jobExperience: JobExperience
   isLatest?: boolean
 }
 
-const TimelineItem: FC<TimelineItemProps> = ({ experience, isLatest }) => {
+const JobExperiencesListItem: FC<Props> = ({ jobExperience, isLatest }) => {
   return (
     <li>
       <div className="pb-8">
@@ -29,16 +30,16 @@ const TimelineItem: FC<TimelineItemProps> = ({ experience, isLatest }) => {
           <div className="ml-8 flex min-w-0 flex-1 justify-between space-x-4 sm:ml-12">
             <div>
               <h2 className="text-lg font-medium sm:text-2xl">
-                {experience.title}
+                {jobExperience.title}
               </h2>
               <h3 className="text-primary font-bold sm:text-lg">
-                {experience.company}
+                {jobExperience.company}
               </h3>
               <time className="text-xs text-gray-500 dark:text-gray-300 sm:text-sm">
-                {experience.timeframe}
+                {jobExperience.timeframe}
               </time>
               <p className="max-w-xl pt-2 text-sm sm:text-base">
-                {experience.description}
+                {jobExperience.description}
               </p>
             </div>
           </div>
@@ -48,4 +49,4 @@ const TimelineItem: FC<TimelineItemProps> = ({ experience, isLatest }) => {
   )
 }
 
-export default TimelineItem
+export default JobExperiencesListItem

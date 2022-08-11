@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config"
 import tailwind from "@astrojs/tailwind"
 import preact from "@astrojs/preact"
+import fonts from "astro-fonts-next"
 
 import astroI18next from "astro-i18next"
 import sitemap from "@astrojs/sitemap"
@@ -9,14 +10,16 @@ import sitemap from "@astrojs/sitemap"
 export default defineConfig({
   vite: {
     ssr: {
-      noExternal: "@fontsource/*",
+      noExternal: "astro-google-fonts-optimizer/*",
     },
   },
 
   integrations: [
     tailwind(),
     preact(),
-    sitemap(),
+    fonts({
+      url: "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap",
+    }),
     sitemap({
       i18n: {
         defaultLocale: "en",
@@ -29,7 +32,6 @@ export default defineConfig({
     astroI18next({
       baseLanguage: "it",
       i18next: {
-        debug: true, // convenient during development to check for missing keys
         supportedLngs: ["it", "en"],
       },
     }),

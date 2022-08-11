@@ -11,5 +11,43 @@
   "cta": {
     "titleFirstRow": "Vuoi sapere di più?",
     "titleSecondRow": "Contattami o scarica il mio CV."
-  }
+  },
+
+  "experiences": [
+    {
+      "title": "Team Leader / Interprete",
+      "company": "CL International · Full-time",
+      "timeframe": "Mar 2016 - Feb 2017 · 1 anno",
+      "description":
+        "CL International era una società di traslochi che operava nelle basi NATO americane, principalmente quella situata a Gricignano di Aversa (CE). Il mio compito era fare in modo che le operazioni venissero eseguite secondo le indicazioni del cliente attraverso la gestione di un team di 4/5 operai."
+    },
+    {
+      "title": "Agente di Rampa",
+      "company": "GH NAPOLI SPA · Stagionale",
+      "timeframe": "Gen 2017 - Mar 2020 · 3 anni 3 mesi",
+      "description":
+        "Supervisione di tutte le operazioni di volo a terra. Il mio lavoro consisteva nel garantire che ogni operazione di terra fosse eseguita nel rispetto delle misure di sicurezza e protezione."
+    },
+    {
+      "title": "Web Developer",
+      "company": "Freelance",
+      "timeframe": "Jan 2020 - Mar 2021 · 1 anni 3 mesi",
+      "description":
+        "Sviluppo e gestione siti web full stack per clienti locali. In particolare per due compagnie assicurative. Lo stack tecnologico principale utilizzato comprendevano React, Nextjs e Firebase."
+    },
+    {
+      "title": "Studente Apple Developer Academy",
+      "company": "Apple Developer Academy @Unina Federico II",
+      "timeframe": "Set 2021 - Giu 2022 · 10 mesi",
+      "description":
+        "L'Apple Developer Academy è una partnership tra l'Università degli Studi di Napoli Federico II e Apple. La formazione presso l'Academy è finalizzata allo sviluppo di app per l'ecosistema di app più innovativo e dinamico del mondo. Il programma si concentra sullo sviluppo di software, sulla creazione di startup e sulla progettazione di app, con particolare attenzione alla creatività e alla collaborazione."
+    },
+    {
+      "title": "Web Developer",
+      "company": "Datamanagement Italia SpA · Full-time",
+      "timeframe": "Mar 2021 - Presente",
+      "description":
+        "Frontend developer mantenimento e sviluppo applicativi per INPS, Agenzia delle Entrate. Tecnologie principali utilizzate: React con Redux per lo state management, e Angularjs ( v. 1.8.x )."
+    }
+  ]
 }
