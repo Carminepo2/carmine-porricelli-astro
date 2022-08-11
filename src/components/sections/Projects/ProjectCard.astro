@@ -1,0 +1,44 @@
+---
+import { Image } from "@astrojs/image/components"
+import Button from "@/components/shared/Button"
+import { EyeIcon, GithubIcon } from "@/components/icons"
+import Badge from "@/components/sections/Projects/Badge"
+import type Project from "@/types/Project"
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props as Props;
+
+---
+
+<article class="rounded-xl bg-none p-4 backdrop-blur-lg hover:bg-gray-50/50 hover:dark:bg-gray-700/10">
+  <div class="relative aspect-[3/2] overflow-hidden rounded-lg">
+    <Image src={import(`../../../static/images/${project.image}`)} class="transition-transform hover:scale-125"
+      width={320} height={220} alt="placeholder" />
+  </div>
+
+  <div class="space-y-4">
+    <h1 class="my-1 text-lg font-semibold">{project.name}</h1>
+
+    <div class="flex flex-wrap items-center gap-2">
+      {project.tags.map((tag) => (
+      <Badge key={tag} title={tag} />
+      ))}
+    </div>
+
+    <p class="text-sm">{project.description}</p>
+
+    <div class="space-x-2">
+      <Button as="a" href={project.previewUrl} className="inline-flex items-center space-x-2" btnType="primary">
+        <EyeIcon className="h-4 w-4" aria-hidden="true" />
+        <span>Preview</span>
+      </Button>
+      <Button as="a" href={project.githubUrl} className="inline-flex items-center space-x-2" btnType="outline">
+        <GithubIcon className="h-4 w-4" aria-hidden="true" />
+        <span>Github</span>
+      </Button>
+    </div>
+  </div>
+</article>

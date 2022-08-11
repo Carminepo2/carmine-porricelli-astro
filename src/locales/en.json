@@ -49,5 +49,40 @@
       "description":
         "Frontend developer, maintenance and development of applications for INPS, Agenzia delle Entrate. Main technologies used: React with Redux for state management, and Angularjs (v. 1.8.x)."
     }
+  ],
+
+  "projects": [
+    {
+      "image": "placeholder.jpg",
+      "name": "Project 1",
+      "tags": ["tag1", "tag2"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "previewUrl": "#",
+      "githubUrl": "#"
+    },
+    {
+      "image": "placeholder.jpg",
+      "name": "Project 2",
+      "tags": ["tag1", "tag2"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "previewUrl": "#",
+      "githubUrl": "#"
+    },
+    {
+      "image": "placeholder.jpg",
+      "name": "Project 3",
+      "tags": ["tag1", "tag2"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "previewUrl": "#",
+      "githubUrl": "#"
+    },
+    {
+      "image": "placeholder.jpg",
+      "name": "Project 4",
+      "tags": ["tag1", "tag2"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "previewUrl": "#",
+      "githubUrl": "#"
+    }
   ]
 }

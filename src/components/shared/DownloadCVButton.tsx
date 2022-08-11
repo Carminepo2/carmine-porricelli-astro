@@ -3,7 +3,7 @@ import i18next, { t } from "i18next"
 import { DownloadIcon } from "@/components/icons"
 import Button from "@/components/shared/Button"
 import { formatDate } from "@/utils/date"
-import CONFIG from "@/data/config"
+import CONFIG from "@/static/data/config"
 
 const DownloadCVButton: FunctionalComponent = () => {
   let cvDownloadUrl = `/cv/CV_CARMINE_PORRICELLI_${i18next.language.toUpperCase()}.pdf`
