@@ -10,7 +10,7 @@ const MoonIcon: FunctionalComponent<Props> = (props) => {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      strokeWidth={1.8}
+      stroke-width={1.8}
       {...props}
     >
       <path
