@@ -14,12 +14,12 @@ const Footer: FC = () => {
             Right Reserved.
           </p>
           <a
-            className="text-primary-700 hover:underline dark:text-primary-400"
+            className="mt-0.5 text-primary-700 hover:underline dark:text-primary-400 sm:mt-0"
             target="__blank"
             rel="noreferrer"
             href={LINKS.GITHUB_SITE_REPO}
           >
-            Checkout the source code!
+            Made by me, checkout the source code!
           </a>
         </div>
       </Container>
