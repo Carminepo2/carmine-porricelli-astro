@@ -2,7 +2,7 @@ import type { FunctionalComponent } from "preact"
 import { t } from "i18next"
 import Button from "@/components/shared/Button"
 import { MailIcon } from "@/components/icons"
-import LINKS from "@/data/links"
+import LINKS from "@/static/data/links"
 
 const ContactMeButton: FunctionalComponent = () => {
   return (

@@ -1,26 +1,11 @@
 ---
-import { Header, JobExperiences, CTA, Footer } from "@/components/sections";
-import MainWrapper from "@/components/MainWrapper";
 import i18next from "i18next";
-
 import Layout from "@/layouts/Layout.astro";
-import "@/styles/animations.css";
-import "@/styles/job-experiences-section.css";
-import BackgroundBlobs from "@/components/BackgroundBlobs";
+import IndexPage from "@/components/pages/IndexPage.astro";
 
 i18next.changeLanguage("en")
 ---
 
 <Layout>
-  <MainWrapper>
-    <BackgroundBlobs client:idle />
-    <div class="relative">
-      <Header />
-      <main>
-        <JobExperiences />
-      </main>
-      <CTA />
-      <Footer />
-    </div>
-  </MainWrapper>
+  <IndexPage />
 </Layout>

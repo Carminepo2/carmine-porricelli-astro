@@ -1,7 +1,7 @@
 import type { FC } from "react"
 import Container from "@/components/shared/Container"
 import Logo from "@/components/shared/Logo"
-import LINKS from "@/data/links"
+import LINKS from "@/static/data/links"
 
 const Footer: FC = () => {
   return (
