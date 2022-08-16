@@ -23,7 +23,7 @@ const Button = <T extends keyof JSXInternal.IntrinsicElements = "button">({
   const Component = (as || "button") as T
 
   const buttonClassName = cn(
-    "inline-block font-medium leading-normal rounded transition duration-200",
+    "inline-block font-medium leading-normal rounded",
     {
       "dark:bg-primary-400 dark:hover:bg-primary-300 dark:text-gray-800 bg-primary-500 hover:bg-primary-400 text-white":
         btnType === "primary",
