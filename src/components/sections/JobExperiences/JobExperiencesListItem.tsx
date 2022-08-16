@@ -1,7 +1,7 @@
 import type { FC } from "react"
 import { t } from "i18next"
 import cn from "clsx"
-import type JobExperience from "@/types/JobExperience"
+import type JobExperience from "@/types/job-experience"
 
 interface Props {
   jobExperience: JobExperience

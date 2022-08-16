@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "preact/hooks"
 import type { FunctionalComponent } from "preact"
 import cn from "clsx"
 
@@ -46,59 +45,21 @@ const BackgroundBlob: FunctionalComponent<BackgroundBlobProps> = ({
   containerClassName = "",
   size = 120,
 }: BackgroundBlobProps) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-
-    if (!canvas) {
-      return
-    }
-
-    canvas.style.height = "100%"
-    canvas.style.width = "100%"
-
-    canvas.width = canvas.offsetWidth
-    canvas.height = canvas.offsetHeight
-    const centerX = canvas.width / 2
-    const centerY = canvas.height / 2
-    const radius = canvas.width / 2
-
-    const context = canvas.getContext("2d")
-
-    if (!context) {
-      return
-    }
-
-    let radgrad = context.createRadialGradient(
-      centerX,
-      centerY,
-      0,
-      centerX,
-      centerY,
-      radius
-    )
-    radgrad.addColorStop(0, `rgba(${BLOB_COLORS[color]},0.7)`)
-    radgrad.addColorStop(0.8, `rgba(${BLOB_COLORS[color]},0.4)`)
-    radgrad.addColorStop(1, `rgba(${BLOB_COLORS[color]},0)`)
-
-    context.beginPath()
-    context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false)
-    context.fillStyle = radgrad
-    context.fill()
-  }, [color])
-
   return (
     <>
       <div
-        className={`absolute opacity-50 dark:opacity-10 ${containerClassName}`}
+        className={`absolute opacity-40 dark:opacity-5 ${containerClassName}`}
       >
         <div
-          style={{ width: size, height: size }}
+          style={{
+            width: size,
+            height: size,
+            borderRadius: "50%",
+            background: `rgb(${BLOB_COLORS[color]})`,
+            filter: "blur(100px)",
+          }}
           className={cn("blob-animation", className)}
-        >
-          <canvas ref={canvasRef} />
-        </div>
+        />
       </div>
     </>
   )

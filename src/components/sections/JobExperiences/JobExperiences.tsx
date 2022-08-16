@@ -2,7 +2,7 @@ import type { FC } from "react"
 import Container from "@/components/shared/Container"
 import { t } from "i18next"
 import JobExperiencesListItem from "@/components/sections/JobExperiences/JobExperiencesListItem"
-import type JobExperience from "@/types/JobExperience"
+import type JobExperience from "@/types/job-experience"
 
 const JobExperiences: FC = () => {
   const jobExperiences = t("experiences", {

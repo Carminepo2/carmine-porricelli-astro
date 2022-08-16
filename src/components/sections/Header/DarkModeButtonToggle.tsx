@@ -1,7 +1,7 @@
 import type { FC } from "react"
 import ButtonIcon from "@/components/shared/ButtonIcon"
 import { MoonIcon, SunIcon } from "@/components/icons"
-import useTheme from "@/hooks/useTheme"
+import useTheme from "@/hooks/use-theme"
 
 const DarkModeButtonToggle: FC = () => {
   const [theme, toggleTheme] = useTheme()
