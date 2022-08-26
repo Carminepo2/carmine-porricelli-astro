@@ -13,7 +13,7 @@
     "@astrojs/preact": "^1.0.2",
     "@astrojs/tailwind": "^1.0.0",
     "@types/react": "^18.0.17",
-    "astro": "^1.0.8",
+    "astro": "^1.0.9",
     "preact": "^10.10.6",
     "prettier-plugin-tailwindcss": "^0.1.13"
   },
