@@ -7,12 +7,6 @@ import astroI18next from "astro-i18next"
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    ssr: {
-      noExternal: "astro-google-fonts-optimizer/*",
-    },
-  },
-
   integrations: [
     tailwind(),
     preact(),
