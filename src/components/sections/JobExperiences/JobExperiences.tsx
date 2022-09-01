@@ -17,7 +17,7 @@ const JobExperiences: FC = () => {
           aria-hidden="true"
         />
         <span
-          className="absolute top-20 left-[21px] z-50 -ml-px h-full w-1 origin-top scale-y-[77%] bg-primary-400 transition-transform duration-[1.5s]"
+          className="absolute top-20 left-[21px] z-50 -ml-px h-full w-1 origin-top scale-y-[85%] bg-primary-400 transition-transform duration-[1.5s]"
           aria-hidden="true"
         />
         <ul role="list" className="mt-4">

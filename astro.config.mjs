@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config"
 import tailwind from "@astrojs/tailwind"
 import preact from "@astrojs/preact"
-import fonts from "astro-fonts-next"
 
 import astroI18next from "astro-i18next"
 
@@ -10,9 +9,6 @@ export default defineConfig({
   integrations: [
     tailwind(),
     preact(),
-    fonts({
-      url: "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap",
-    }),
     astroI18next({
       baseLanguage: "it",
       i18next: {

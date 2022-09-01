@@ -44,10 +44,17 @@
     },
     {
       "title": "Web Developer",
-      "company": "Datamanagement Italia SpA · Full-time",
-      "timeframe": "Mar 2021 - Present",
+      "company": "Datamanagement Italia S.p.A. · Full-time",
+      "timeframe": "Mar 2021 - Ago 2022 · 1 year 6 months",
       "description":
         "Frontend developer, maintenance and development of applications for INPS, Agenzia delle Entrate. Main technologies used: React with Redux for state management, and Angularjs (v. 1.8.x)."
+    },
+    {
+      "title": "Junior Fron-End Software Developer",
+      "company": "PagoPA S.p.A. · Full-time",
+      "timeframe": "Set 2022 - Present",
+      "description":
+        ""
     }
   ]
 }
