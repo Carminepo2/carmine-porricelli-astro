@@ -13,14 +13,14 @@
     "@astrojs/preact": "^1.0.2",
     "@astrojs/tailwind": "^1.0.0",
     "@types/react": "^18.0.18",
-    "astro": "^1.1.3",
+    "astro": "^1.1.6",
     "preact": "^10.10.6",
     "prettier-plugin-tailwindcss": "^0.1.13"
   },
   "dependencies": {
     "@fontsource/roboto": "^4.5.8",
-    "@tailwindcss/forms": "^0.5.2",
-    "astro-i18next": "^1.0.0-beta.5",
+    "@tailwindcss/forms": "^0.5.3",
+    "astro-i18next": "^1.0.0-beta.9",
     "clsx": "^1.2.1",
     "i18next-fs-backend": "^1.1.5"
   }
