@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/preact": "^1.0.2",
+    "@astrojs/preact": "^1.1.0",
     "@astrojs/tailwind": "^1.0.0",
     "@types/react": "^18.0.18",
-    "astro": "^1.1.6",
+    "astro": "^1.2.0",
     "preact": "^10.10.6",
     "prettier-plugin-tailwindcss": "^0.1.13"
   },
