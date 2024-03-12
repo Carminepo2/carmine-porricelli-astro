@@ -1,0 +1,54 @@
+---
+import { cn } from '@/lib/utils'
+
+const BLOB_COLORS = {
+  pink: 'rgb(249,168,212)',
+  yellow: 'rgb(252,211,77)',
+  purple: 'rgb(196,181,253)',
+  blue: 'rgb(147,197,253)',
+  indigo: 'rgb(165,180,252)',
+  green: 'rgb(110,231,183)'
+} as const
+
+type Props = {
+  color: keyof typeof BLOB_COLORS
+  size: number
+  class?: string
+}
+
+const { color, size } = Astro.props
+---
+
+<div role='presentation' class={cn('opacity-50 dark:opacity-5', Astro.props.class)}>
+  <div
+    style={`background-color:${BLOB_COLORS[color]};height:${size}px;width:${size}px`}
+    class='blob-animation rounded-full blur-3xl'
+  >
+  </div>
+</div>
+
+<style>
+  .blob-animation {
+    animation: blob;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes blob {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+      transform: translate(20%, -30%) scale(1.2);
+    }
+
+    50% {
+      transform: translate(-10%, 30%) scale(1.4);
+    }
+
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+</style>

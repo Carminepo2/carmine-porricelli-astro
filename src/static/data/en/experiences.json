@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Team Leader / Interpreter",
+    "company": "CL International · Full-time",
+    "timeframe": "Mar 2016 - Feb 2017 · 1 year",
+    "description": "CL International was a moving company that operated in America's NATO bases, mainly the one situated at Gricignano di Aversa (CE). My job was to make sure that the operations were carried out according to the customer's instructions through the management of a team of 4/5 workers."
+  },
+  {
+    "title": "Ramp Agent",
+    "company": "GH NAPOLI SPA · Seasonal",
+    "timeframe": "Jan 2017 - Mar 2020 · 3 years 3 months",
+    "description": "Supervision of all ground flight operations. My job was to ensure that each groud operation is carried out in accordance with the measures of safety and security."
+  },
+  {
+    "title": "Web Developer",
+    "company": "Freelance",
+    "timeframe": "Jan 2020 - Mar 2021 · 1 year 3 months",
+    "description": "Developing and management of full stack websites for local customers. In particular for two insurance companies. The tech stack used was React, Nextjs, and Firebase."
+  },
+  {
+    "title": "Apple Developer Academy student",
+    "company": "Apple Developer Academy @Unina Federico II",
+    "timeframe": "Sep 2021 - Jun 2022 · 10 months",
+    "description": "The Apple Developer Academy is a partnership between the University of Napoli Federico II and Apple. Training at the Academy is aimed at developing apps for the world’s most innovative and vibrant app ecosystem. The program focuses on software development, startup creation and app design with an emphasis on creativity and collaboration."
+  },
+  {
+    "title": "Web Developer",
+    "company": "Datamanagement Italia S.p.A. · Full-time",
+    "timeframe": "Mar 2021 - Ago 2022 · 1 year 6 months",
+    "description": "Frontend developer, maintenance and development of applications for INPS, Agenzia delle Entrate. Main technologies used: React with Redux for state management, and Angularjs (v. 1.8.x)."
+  },
+  {
+    "title": "Junior Front-End Software Developer",
+    "company": "PagoPA S.p.A. · Full-time",
+    "timeframe": "Set 2022 - Present",
+    "description": ""
+  }
+]
