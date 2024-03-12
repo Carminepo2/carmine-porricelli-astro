@@ -1,0 +1,93 @@
+---
+import { cn } from '@/lib/utils'
+import experiencesIt from '@/static/data/it/experiences.json'
+import experiencesEn from '@/static/data/en/experiences.json'
+import { getLangFromUrl } from '@/i18n'
+
+const activeLang = getLangFromUrl(Astro.url)
+
+const experiences = {
+  it: experiencesIt,
+  en: experiencesEn
+}[activeLang]
+---
+
+<div class='relative'>
+  <span role='presentation' class='dotted-line absolute -top-20 left-[10px] h-40 w-1'></span>
+  <ul role='list' class='ml-1.5 mt-20'>
+    {
+      experiences.map(({ title, company, timeframe, description }, i) => {
+        const isLatest = i === experiences.length - 1
+
+        return (
+          <li class='relative'>
+            <div class='pb-8'>
+              {/* Bullet Point */}
+              <span
+                role='presentation'
+                class={cn(
+                  'absolute z-50 mt-2.5 flex h-3 w-3 rounded-full ring-8 ring-white dark:ring-gray-700 sm:mt-3',
+                  {
+                    'inline-block bg-primary-400': !isLatest
+                  }
+                )}
+              >
+                {isLatest && (
+                  <>
+                    <span class='absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75 dark:bg-red-400' />
+                    <span class='relative inline-flex h-3 w-3 rounded-full bg-red-600 dark:bg-red-500' />
+                  </>
+                )}
+              </span>
+
+              {/* Line */}
+              {!isLatest && <span role='presentation' class='absolute -bottom-1 left-1 top-1 w-1 bg-primary-400' />}
+
+              {/* Experience */}
+              <article>
+                <div class='ml-8 sm:ml-12'>
+                  <div>
+                    <h2 class='text-lg font-medium sm:text-2xl'>{title}</h2>
+                    <h3 class='text-primary'>{company}</h3>
+                    <time class='text-xs text-gray-400 dark:text-gray-300 sm:text-sm'>{timeframe}</time>
+                    <p class='mt-2 max-w-xl text-sm sm:text-base'>{description}</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </li>
+        )
+      })
+    }
+  </ul>
+</div>
+
+<style>
+  .dotted-line {
+    background-image: linear-gradient(
+      0deg,
+      rgba(255, 0, 0, 0) 12%,
+      theme('colors.primary.400') 12%,
+      theme('colors.primary.400') 24%,
+      rgba(255, 0, 0, 0) 24%,
+      rgba(255, 0, 0, 0) 36%,
+      theme('colors.primary.400') 36%,
+      theme('colors.primary.400') 46%,
+      rgba(255, 0, 0, 0) 46%,
+      rgba(255, 0, 0, 0) 56%,
+      theme('colors.primary.400') 56%,
+      theme('colors.primary.400') 64%,
+      rgba(255, 0, 0, 0) 64%,
+      rgba(255, 0, 0, 0) 72%,
+      theme('colors.primary.400') 72%,
+      theme('colors.primary.400') 80%,
+      rgba(255, 0, 0, 0) 80%,
+      rgba(255, 0, 0, 0) 86%,
+      theme('colors.primary.400') 86%,
+      theme('colors.primary.400') 92%,
+      rgba(255, 0, 0, 0) 92%,
+      rgba(255, 0, 0, 0) 96%,
+      theme('colors.primary.400') 96%
+    );
+  }
+</style>

@@ -1,0 +1,108 @@
+---
+import { RefreshIcon, Button } from '@/components'
+
+const DRAW_ANIMATION_CLASSNAME = 'draw-line-portrait-animation'
+const ERASE_ANIMATION_CLASSNAME = 'erase-line-portrait-animation'
+
+const RESTART_ANIMATION_BUTTON_ID = 'animated-line-portrait-restart-animation-button'
+const LINE_PORTRAIT_SVG_PATH_ID = 'animated-line-portrait-svg-path'
+---
+
+<div class='relative'>
+  <svg
+    aria-hidden='true'
+    xmlns='http://www.w3.org/2000/svg'
+    viewBox='0 0 434.6607 640.87002'
+    class='h-80 md:h-96 lg:h-[512px]'
+  >
+    <path
+      id={LINE_PORTRAIT_SVG_PATH_ID}
+      class={DRAW_ANIMATION_CLASSNAME}
+      d='M365.09677,404.129S373.6129,531.871,412.32258,555.09677s163.35484,20.129,178.83871,16.25807,41.03226.77419,48.77419-8.51613,21.67742-83.6129,0-92.90323-26.32258-3.871-34.06451-6.19354-20.90323-3.871-36.3871.77419-31.74193,2.32258-34.06452,0,60.3871-17.80645,68.90323-14.70968S617.48387,456,626.77419,452.129s36.35115,11.61291,24.75622,14.70968S626,500.90323,560.96774,473.03226,606.3871,428.90323,610,414.19355s4.3871-20.90323-8-23.22581-22.45161,14.70968-11.6129,14.70968,3.871,10.83871-7.74194,5.41935-29.41935-16.25806-15.48387-28.64516S604.06452,360,610,370.06452s12.129,30.19354,5.93548,41.03225,12.3871,3.871,15.48387-3.09677,22.45162-17.80645,13.93549-34.83871S607.16129,329.03226,610,314.32258l2.83871-14.70968,7.74194-15.48387S670.129,283.35484,674,291.871,684.06452,270.96774,652.32258,264s-36.3871,0-36.3871,0l.7742,9.29032s-44.129,1.54839-30.96774,27.871,22.45161,48,13.93548,51.09677-10.83871-37.16129-41.03226-50.32258S491.29032,264,440.96774,294.19355c0,0,23.25807-32.51613,44.53226-36.3871s82.43548,0,82.43548,0L564.06452,288s-13.93549-9.29032,6.19354-12.3871-3.09677,54.96775-24.77419,44.90323-30.19355-20.90323-52.64516-11.6129-20.90323,20.90322,3.871,19.35483,28.64516-2.32258,40.25806-1.54838,26.329,6.6426,25.54839-1.54839-20.129-42.58064-73.54839-27.871-28.64516,27.09678-28.64516,27.09678,88.25807,45.09625,35.6129,90.67716-52.64516,9.968-96-6.29007-50.32258-46.45161-68.90322-49.54838-20.90323-33.29033-38.70968-21.67742-19.35484,30.96774-19.35484,30.96774-10.06451,68.90322,56.51613,92.90322,10.83871-66.58064,10.83871-66.58064S337.22581,347.6129,362,366.96774,378.25806,315.871,378.25806,315.871s33.29033,7.74193,26.32259-10.83871-2.32259-51.09678,11.6129-54.96774S445.6129,195.871,469.6129,186.58065s20.129,40.25806,20.129,40.25806,48.77419-15.48387,45.67741-45.67742,26.32259-32.51613,26.32259-32.51613,44.129,3.09678,44.129,27.871,22.19355,42.58064,4.129,48,16,6.19355,25.29032-3.871,10.83871,32.51613,23.22581,35.6129,31.74193,6.19355,34.06452,3.871-21.67742,0-20.129-21.67742S663.93548,163.35484,650,148.64516,635.29032,75.871,545.48387,75.871s-132.3871,84.38709-85.16129,77.41935,28.64516-78.19355-30.96774-67.35484-63.48387,30.96775-92.90323,44.90323-72.31056,17.03226-64.02625,43.35484,1.31658,29.41935-7.97375,65.03226-4.64516,46.45161,0,52.64516-4.534,36.38709-5.36377,46.45161,53.36377,126.96774,71.17022,64.25807-78.96774-50.32259,16.25807,89.80645,13.93548,181.93548,13.93548,181.93548,28.8498,49.54839,115.45716,40.25807S622.90323,579.871,622.90323,579.871s-51.871-4.64516-40.25807,14.70968S646.129,693.67742,650,662.70968s-24-70.45162-24-70.45162,30.96774-68.129,31.74194-91.35483,14.70967-58,17.80645-61.90323,10.83871-48.03226,1.54838-69.70968-7.74193-55.74193-30.96774-54.19355-36.38709,4.64517-28.64516,9.29033,24.77419,13.93548,38.70968,9.29032S674,297.29032,674,297.29032'
+      transform='translate(-258.57842 -75.37097)'
+      fill='none'
+      stroke='currentColor'
+      stroke-miterlimit='10'></path>
+  </svg>
+
+  <Button
+    disabled
+    id={RESTART_ANIMATION_BUTTON_ID}
+    variant='icon'
+    class='absolute -right-10 h-6 w-6 transition-opacity md:h-7 md:w-7 opacity-0'
+    aria-hidden='true'
+  >
+    <RefreshIcon />
+  </Button>
+</div>
+
+<script
+  is:inline
+  define:vars={{
+    DRAW_ANIMATION_CLASSNAME,
+    ERASE_ANIMATION_CLASSNAME,
+    RESTART_ANIMATION_BUTTON_ID,
+    LINE_PORTRAIT_SVG_PATH_ID
+  }}
+>
+  const svgLinePath = document.getElementById(LINE_PORTRAIT_SVG_PATH_ID)
+  const restartButton = document.getElementById(RESTART_ANIMATION_BUTTON_ID)
+
+  function onAnimationEnd(ctx) {
+    if (ctx.animationName !== 'draw-line-portrait') return
+    restartButton.disabled = false
+    restartButton.style.opacity = '1'
+  }
+
+  function onAnimationStart() {
+    restartButton.disabled = true
+    restartButton.style.opacity = '0'
+  }
+
+  function onRestartButtonClick() {
+    svgLinePath.classList.remove(DRAW_ANIMATION_CLASSNAME)
+    svgLinePath.classList.add(ERASE_ANIMATION_CLASSNAME)
+
+    setTimeout(() => {
+      svgLinePath.classList.remove(ERASE_ANIMATION_CLASSNAME)
+      svgLinePath.classList.add(DRAW_ANIMATION_CLASSNAME)
+    }, 600)
+  }
+
+  svgLinePath.addEventListener('animationend', onAnimationEnd)
+  svgLinePath.addEventListener('animationstart', onAnimationStart)
+  restartButton.addEventListener('click', onRestartButtonClick)
+</script>
+
+<style>
+  .draw-line-portrait-animation {
+    stroke-dasharray: 6070;
+    stroke-dashoffset: 6070;
+    animation: draw-line-portrait;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-duration: 6s;
+    animation-delay: 0.1s;
+  }
+
+  @keyframes draw-line-portrait {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .erase-line-portrait-animation {
+    stroke-dashoffset: 0;
+    animation: erase-line-portrait;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes erase-line-portrait {
+    to {
+      stroke-dasharray: 6070;
+      stroke-dashoffset: 6070;
+    }
+  }
+</style>

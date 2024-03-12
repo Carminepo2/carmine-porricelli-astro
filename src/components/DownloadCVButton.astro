@@ -1,0 +1,21 @@
+---
+import { DownloadIcon, Button } from '@/components'
+import info from '@/static/data/info.json'
+import { getLangFromUrl, useTranslations } from '@/i18n'
+
+const activeLang = getLangFromUrl(Astro.url)
+const t = useTranslations(activeLang)
+
+const cvDownloadUrl = `/cv/CV_CARMINE_PORRICELLI_${activeLang.toUpperCase()}.pdf`
+---
+
+<div>
+  <Button as='a' class='flex items-center space-x-2' variant='secondary' size='large' href={cvDownloadUrl} download>
+    <DownloadIcon aria-hidden class='h-5 w-5' />
+    <span>{t('downloadCVButton.label')}</span>
+  </Button>
+  <small class='relative bottom-0.5 text-xs text-gray-400/60'>
+    {t('downloadCVButton.lastUpdated')}
+    <span class='font-medium text-gray-500/60'>{info.updatedCVDate}</span>
+  </small>
+</div>
