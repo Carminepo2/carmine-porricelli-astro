@@ -8,11 +8,10 @@
     "build": "astro check && astro build",
     "lint": "astro check",
     "preview": "astro preview",
-    "astro": "astro",
-    "generate-locale-pages": "tsx ./scripts/generate-locale-pages.ts"
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.8",
+    "@astrojs/check": "^0.5.9",
     "@astrojs/react": "^3.1.0",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource/roboto": "^5.0.12",
@@ -23,10 +22,11 @@
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
-    "@types/node": "^20.11.26",
+    "@types/node": "^20.11.27",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12",
     "tsx": "^4.7.1",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.2",
+    "vite": "^5.1.6"
   }
 }
