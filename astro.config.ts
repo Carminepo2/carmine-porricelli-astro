@@ -44,7 +44,7 @@ function generateLocaleAstroPages(): AstroIntegration {
   return {
     name: 'GenerateLocaleAstroPages',
     hooks: {
-      'astro:build:setup': () => {
+      'astro:config:setup': () => {
         copyAllFilesInDir(PAGES_DIR, LOCALE_DIR)
       },
       'astro:server:setup': ({ server }) => {
