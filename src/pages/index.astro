@@ -1,6 +1,75 @@
 ---
-/**
- * This page is just a placeholder.
- * The user will be redirected to the correct sub-path locale based on the browser's language.
- */
+import {
+  SectionContainer,
+  ContactMeButton,
+  DownloadCVButton,
+  Button,
+  LinkedInIcon,
+  GithubIcon,
+  AnimatedLinePortrait,
+  Experiences
+} from '@/components'
+import Layout from '@/layouts/Layout.astro'
+import info from '@/static/data/info.json'
+import { useTranslations, getLangFromUrl, languages } from '@/i18n'
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((locale) => ({ params: { locale } }))
+}
+
+const activeLang = getLangFromUrl(Astro.url)
+const t = useTranslations(activeLang)
 ---
+
+<Layout>
+  <SectionContainer as='header' class='pb-20'>
+    <div class='items-center justify-between md:flex'>
+      <div class='mb-6 max-w-2xl px-4 md:mb-0'>
+        <span class='text-2xl font-medium sm:text-4xl'>{t('header.toptitle')}</span>
+        <h1 class='mt-4 mb-6 text-5xl font-bold text-primary-500 dark:text-primary-400 sm:text-6xl lg:mb-8 lg:text-7xl'>
+          {t('header.title')}
+        </h1>
+
+        <div class='mb-6 max-w-lg lg:mb-12'>
+          <p class='text-base text-gray-500 dark:text-gray-300 sm:text-xl'>{t('header.subtitle')}</p>
+        </div>
+
+        <div class='flex flex-wrap items-start gap-4 md:gap-6'>
+          <ContactMeButton />
+          <DownloadCVButton />
+        </div>
+
+        <div class='mt-2 flex space-x-4'>
+          <Button
+            aria-label={t('header.goToLinkedinBtnAriaLabel')}
+            variant='icon'
+            size='large'
+            as='a'
+            target='_blank'
+            rel='noreferrer'
+            href={info.linkedinLink}
+          >
+            <LinkedInIcon />
+          </Button>
+          <Button
+            aria-label={t('header.goToGithubBtnAriaLabel')}
+            variant='icon'
+            size='large'
+            as='a'
+            target='_blank'
+            rel='noreferrer'
+            href={info.githubLink}
+          >
+            <GithubIcon />
+          </Button>
+        </div>
+      </div>
+      <div class='mt-20 flex items-center justify-center px-4 md:mt-0'>
+        <AnimatedLinePortrait />
+      </div>
+    </div>
+  </SectionContainer>
+  <SectionContainer as='header' class='mt-28 md:mt-42'>
+    <Experiences />
+  </SectionContainer>
+</Layout>
