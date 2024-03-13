@@ -48,6 +48,7 @@ function generateLocaleAstroPages(): AstroIntegration {
         copyAllFilesInDir(PAGES_DIR, LOCALE_DIR)
       },
       'astro:server:setup': ({ server }) => {
+        copyAllFilesInDir(PAGES_DIR, LOCALE_DIR)
         server.watcher.on('change', (path) => {
           if (path.includes(PAGES_DIR)) {
             copyAllFilesInDir(PAGES_DIR, LOCALE_DIR)
