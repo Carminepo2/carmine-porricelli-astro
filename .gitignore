@@ -20,4 +20,4 @@ pnpm-debug.log*
 .DS_Store
 
 # locale pages
-src/pages/[locale]
+src/pages/[[]locale[]]/
