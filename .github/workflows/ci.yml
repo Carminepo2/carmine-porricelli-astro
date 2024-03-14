@@ -11,7 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v3
@@ -24,6 +23,22 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-
       - name: Test
         run: pnpm test
+
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Lint
+        run: pnpm lint
