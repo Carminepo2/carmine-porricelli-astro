@@ -43,4 +43,15 @@ describe('index page', () => {
     cy.getBySel('theme-mode-toggle').click()
     cy.get('html').should('have.attr', 'class', 'light')
   })
+
+  it('should correctly repeat the animation', () => {
+    cy.visit('/')
+    cy.getBySel('animated-line-portrait-svg-path').should('have.attr', 'class', 'draw-line-portrait-animation')
+    cy.wait(6500)
+    cy.getBySel('animated-line-portrait-restart-animation-button').should('be.visible')
+    cy.getBySel('animated-line-portrait-restart-animation-button').click()
+    cy.getBySel('animated-line-portrait-svg-path').should('have.attr', 'class', 'erase-line-portrait-animation')
+    cy.wait(1000)
+    cy.getBySel('animated-line-portrait-svg-path').should('have.attr', 'class', 'draw-line-portrait-animation')
+  })
 })
