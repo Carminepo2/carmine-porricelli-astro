@@ -47,8 +47,17 @@ function generateLocaleAstroPages(): AstroIntegration {
   return {
     name: 'GenerateLocaleAstroPages',
     hooks: {
-      'astro:config:setup': () => {
+      'astro:config:setup': ({ updateConfig }) => {
         copyAllFilesInDir(PAGES_DIR, LOCALE_DIR)
+        updateConfig({
+          vite: {
+            server: {
+              watch: {
+                ignored: /\[locale\]/
+              }
+            }
+          }
+        })
       },
       'astro:server:setup': ({ server }) => {
         copyAllFilesInDir(PAGES_DIR, LOCALE_DIR)
