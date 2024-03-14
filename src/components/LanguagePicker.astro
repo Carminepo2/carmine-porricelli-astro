@@ -5,7 +5,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n'
 const activeLang = getLangFromUrl(Astro.url)
 ---
 
-<select class='bg-transparent border-none' onchange='window.location.pathname = this.value'>
+<select data-cy='lang-picker' class='bg-transparent border-none' onchange='window.location.pathname = this.value'>
   {
     Object.keys(languages).map((lang: string) => (
       <option value={getRelativeLocaleUrl(lang)} selected={lang === activeLang}>

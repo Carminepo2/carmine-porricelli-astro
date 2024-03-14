@@ -21,3 +21,7 @@ pnpm-debug.log*
 
 # locale pages
 src/pages/[[]locale[]]/
+
+# cypress
+cypress/videos
+cypress/screenshots
