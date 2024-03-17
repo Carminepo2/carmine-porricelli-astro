@@ -1,20 +1,11 @@
 ---
-import {
-  SectionContainer,
-  ContactMeButton,
-  DownloadCVButton,
-  PersonalLogoIcon,
-  ThemeModeToggle,
-  BackgroundBlob,
-  LanguagePicker
-} from '@/components'
+import { SectionContainer, PersonalLogoIcon, ThemeModeToggle, BackgroundBlob, LanguagePicker } from '@/components'
 import info from '@/static/data/info.json'
-import { getLangFromUrl, languages, useTranslations } from '@/i18n'
+import { getLangFromUrl, languages } from '@/i18n'
 import { getAbsoluteLocaleUrl } from 'astro:i18n'
 import { AstroFont } from 'astro-font'
 
 const activeLang = getLangFromUrl(Astro.url)
-const t = useTranslations(activeLang)
 ---
 
 <!doctype html>
