@@ -26,6 +26,9 @@ export const ui = {
     downloadCVButton: {
       label: 'Scarica CV',
       lastUpdated: 'Aggiornato il '
+    },
+    languagePicker: {
+      ariaLabel: 'Seleziona una lingua'
     }
   },
   en: {
@@ -48,6 +51,9 @@ export const ui = {
     downloadCVButton: {
       label: 'Download CV',
       lastUpdated: 'Last updated '
+    },
+    languagePicker: {
+      ariaLabel: 'Select a language'
     }
   }
 } as const satisfies Record<keyof typeof languages, unknown>
