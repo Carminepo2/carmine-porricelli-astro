@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '@/layouts/Layout.astro'
+import { getLangFromUrl } from '@/i18n'
+import { SectionContainer } from '@/components'
+
+const lang = getLangFromUrl(Astro.url)
+
+const posts = (await getCollection('blog'))
+  .filter((post) => post.data.lang === lang)
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+---
+
+<Layout>
+  <SectionContainer as='main'>
+    <section>
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <a href={`/blog/${post.slug}/`}>
+                <img width={720} height={360} src={post.data.heroImage} alt='' />
+                <h4 class='title'>{post.data.title}</h4>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </SectionContainer>
+</Layout>

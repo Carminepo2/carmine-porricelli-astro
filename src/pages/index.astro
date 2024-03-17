@@ -10,8 +10,8 @@ import {
   Experiences
 } from '@/components'
 import Layout from '@/layouts/Layout.astro'
-import info from '@/static/data/info.json'
 import { useTranslations, getLangFromUrl, languages } from '@/i18n'
+import { GITHUB_LINK, LINKEDIN_LINK } from '@/consts'
 
 export function getStaticPaths() {
   return Object.keys(languages).map((locale) => ({ params: { locale } }))
@@ -50,7 +50,7 @@ const t = useTranslations(activeLang)
             as='a'
             target='_blank'
             rel='noreferrer'
-            href={info.linkedinLink}
+            href={LINKEDIN_LINK}
           >
             <LinkedInIcon />
           </Button>
@@ -61,7 +61,7 @@ const t = useTranslations(activeLang)
             as='a'
             target='_blank'
             rel='noreferrer'
-            href={info.githubLink}
+            href={GITHUB_LINK}
           >
             <GithubIcon />
           </Button>

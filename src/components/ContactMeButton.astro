@@ -1,13 +1,13 @@
 ---
 import { Button, MailIcon } from '@/components'
-import info from '@/static/data/info.json'
+import { E_MAIL } from '@/consts'
 import { getLangFromUrl, useTranslations } from '@/i18n'
 
 const activeLang = getLangFromUrl(Astro.url)
 const t = useTranslations(activeLang)
 ---
 
-<Button as='a' class='flex items-center space-x-2' href={`mailto:${info.email}`} size='large'>
+<Button as='a' class='flex items-center space-x-2' href={`mailto:${E_MAIL}`} size='large'>
   <MailIcon aria-hidden='true' class='h-5 w-5' />
   <span>{t('contactMeButton.label')}</span>
 </Button>

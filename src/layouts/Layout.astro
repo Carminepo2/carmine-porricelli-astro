@@ -1,9 +1,9 @@
 ---
 import { SectionContainer, PersonalLogoIcon, ThemeModeToggle, BackgroundBlob, LanguagePicker } from '@/components'
-import info from '@/static/data/info.json'
 import { getLangFromUrl, languages } from '@/i18n'
 import { getAbsoluteLocaleUrl } from 'astro:i18n'
 import { AstroFont } from 'astro-font'
+import { GITHUB_REPO_LINK } from '@/consts'
 
 const activeLang = getLangFromUrl(Astro.url)
 ---
@@ -99,7 +99,7 @@ const activeLang = getLangFromUrl(Astro.url)
               class='mt-0.5 text-primary-700 hover:underline dark:text-primary-400 sm:mt-0'
               target='__blank'
               rel='noreferrer'
-              href={info.githubRepo}
+              href={GITHUB_REPO_LINK}
             >
               Made by me, checkout the source code!
             </a>

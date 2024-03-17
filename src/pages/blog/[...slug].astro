@@ -1,0 +1,24 @@
+---
+import { SectionContainer } from '@/components'
+import { getLangFromUrl } from '@/i18n'
+import Layout from '@/layouts/Layout.astro'
+import { type CollectionEntry, getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (post) => post.data.lang === 'it')
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post
+  }))
+}
+type Props = CollectionEntry<'blog'>
+
+const post = Astro.props
+const { Content } = await post.render()
+---
+
+<Layout>
+  <SectionContainer>
+    <Content />
+  </SectionContainer>
+</Layout>

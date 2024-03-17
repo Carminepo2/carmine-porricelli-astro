@@ -1,6 +1,6 @@
 ---
 import { DownloadIcon, Button } from '@/components'
-import info from '@/static/data/info.json'
+import { UPDATED_CV_DATE } from '@/consts'
 import { getLangFromUrl, useTranslations } from '@/i18n'
 
 const activeLang = getLangFromUrl(Astro.url)
@@ -16,6 +16,6 @@ const cvDownloadUrl = `/cv/CV_CARMINE_PORRICELLI_${activeLang.toUpperCase()}.pdf
   </Button>
   <small class='relative bottom-0.5 text-xs text-gray-400/60'>
     {t('downloadCVButton.lastUpdated')}
-    <span class='font-medium text-gray-500/60'>{info.updatedCVDate}</span>
+    <span class='font-medium text-gray-500/60'>{UPDATED_CV_DATE}</span>
   </small>
 </div>
