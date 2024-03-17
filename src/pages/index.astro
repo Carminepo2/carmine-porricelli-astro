@@ -77,4 +77,20 @@ const t = useTranslations(activeLang)
   <SectionContainer as='main' class='my-32 md:mt-40'>
     <Experiences />
   </SectionContainer>
+
+  {/* CTA */}
+  <SectionContainer as='section' class='mt-20'>
+    <div
+      class='rounded-xl bg-gray-100/30 p-8 backdrop-blur-xl dark:bg-gray-700/20 sm:p-12 lg:flex lg:items-center lg:justify-between'
+    >
+      <h2 class='text-3xl font-medium tracking-tight sm:text-4xl'>
+        <span class='block'>{t('cta.titleFirstRow')}</span>
+        <span class='block text-primary-500 dark:text-primary-400'>{t('cta.titleSecondRow')}</span>
+      </h2>
+      <div class='mt-8 flex flex-wrap items-start gap-4 md:gap-6 lg:mt-0 lg:flex-shrink-0'>
+        <ContactMeButton />
+        <DownloadCVButton />
+      </div>
+    </div>
+  </SectionContainer>
 </Layout>
