@@ -71,13 +71,15 @@ const t = useTranslations(activeLang)
   </head>
   <body>
     <div
-      class='transition-colors duration-300 ease-linear relative overflow-hidden bg-white text-gray-700 antialiased dark:bg-gray-800 dark:text-gray-200'
+      class='transition-colors duration-300 ease-linear relative text-gray-700 antialiased dark:bg-gray-800 dark:text-gray-200'
     >
-      <BackgroundBlob color='yellow' class='absolute -top-72 right-0' size={1150} />
-      <BackgroundBlob color='blue' class='absolute -top-60 left-0' size={1150} />
-      <BackgroundBlob color='yellow' class='absolute -bottom-[600px] right-0' size={800} />
+      <div class='absolute inset-0 overflow-hidden'>
+        <BackgroundBlob color='yellow' class='absolute -top-72 right-0' size={1150} />
+        <BackgroundBlob color='blue' class='absolute -top-60 left-0' size={1150} />
+        <BackgroundBlob color='yellow' class='absolute -bottom-[600px] right-0' size={800} />
+      </div>
 
-      <div class='relative'>
+      <div class='relative min-h-screen flex flex-col'>
         {/* Nav */}
         <nav class='flex justify-between py-8 px-8'>
           <PersonalLogoIcon class='h-12 w-12' />
@@ -88,26 +90,15 @@ const t = useTranslations(activeLang)
         </nav>
 
         {/* Content */}
-        <slot />
-
-        {/* CTA */}
-        <SectionContainer as='section' class='mt-20'>
-          <div
-            class='rounded-xl bg-gray-100/30 p-8 backdrop-blur-xl dark:bg-gray-700 sm:p-12 lg:flex lg:items-center lg:justify-between'
-          >
-            <h2 class='text-3xl font-medium tracking-tight sm:text-4xl'>
-              <span class='block'>{t('cta.titleFirstRow')}</span>
-              <span class='block text-primary-500 dark:text-primary-400'>{t('cta.titleSecondRow')}</span>
-            </h2>
-            <div class='mt-8 flex flex-wrap items-start gap-4 md:gap-6 lg:mt-0 lg:flex-shrink-0'>
-              <ContactMeButton />
-              <DownloadCVButton />
-            </div>
-          </div>
-        </SectionContainer>
+        <div class='flex-1'>
+          <slot />
+        </div>
 
         {/* Footer */}
-        <SectionContainer as='footer' class='py-16 md:py-28 flex flex-col items-center justify-between md:flex-row'>
+        <SectionContainer
+          as='footer'
+          class='py-16 md:py-28 w-full flex flex-col items-center justify-between md:flex-row'
+        >
           <PersonalLogoIcon class='h-12 w-auto' />
           <div class='mt-6 text-center text-xs md:mt-0 md:text-right md:text-sm'>
             <p>

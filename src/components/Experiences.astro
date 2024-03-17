@@ -13,7 +13,7 @@ const experiences = {
 ---
 
 <div class='relative'>
-  <span role='presentation' class='dotted-line absolute -top-20 left-[10px] h-40 w-1'></span>
+  <span role='presentation' class='dotted-line absolute top-[-137px] left-[10px] h-40 w-1'></span>
   <ul role='list' class='ml-1.5 mt-20'>
     {
       experiences.map(({ title, company, timeframe, description }, i) => {
@@ -23,28 +23,23 @@ const experiences = {
           <li class='relative'>
             <div class='pb-8'>
               {/* Bullet Point */}
-              <span
-                role='presentation'
-                class={cn(
-                  'absolute z-50 mt-2.5 flex h-3 w-3 rounded-full ring-8 ring-white dark:ring-gray-700 sm:mt-3',
-                  {
-                    'inline-block bg-primary-400': !isLatest
-                  }
-                )}
-              >
-                {isLatest && (
-                  <>
-                    <span class='absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75 dark:bg-red-400' />
-                    <span class='relative inline-flex h-3 w-3 rounded-full bg-red-600 dark:bg-red-500' />
-                  </>
-                )}
-              </span>
 
               {/* Line */}
-              {!isLatest && <span role='presentation' class='absolute -bottom-1 left-1 top-1 w-1 bg-primary-400' />}
+              {!isLatest && (
+                <div role='presentation' class='timeline-line absolute -bottom-1 left-1 top-1 w-1 bg-transparent' />
+              )}
+
+              {isLatest && (
+                <div
+                  role='presentation'
+                  class='absolute top-2 inline-flex h-3 w-3 rounded-full bg-red-600 dark:bg-red-500'
+                >
+                  <span class='absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75 dark:bg-red-400' />
+                </div>
+              )}
 
               {/* Experience */}
-              <article>
+              <article class={cn({ 'mt-1': isLatest })}>
                 <div class='ml-8 sm:ml-12'>
                   <div>
                     <h2 class='text-lg font-medium sm:text-2xl'>{title}</h2>
@@ -63,6 +58,32 @@ const experiences = {
 </div>
 
 <style>
+  .timeline-line::before {
+    content: ' ';
+    background-color: theme('colors.primary.400');
+    position: absolute;
+    inset: 0;
+    mask-image: linear-gradient(black, black),
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18"><circle r="100" cx="50" cy="50" fill="red" /></svg>');
+    mask-size:
+      100% 100%,
+      25px 25px;
+    mask-position: top left;
+    mask-repeat: no-repeat;
+    mask-composite: exclude;
+    mask-composite: xor;
+  }
+
+  .timeline-line::after {
+    content: ' ';
+    position: absolute;
+    top: 8px;
+    right: -3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background-color: theme('colors.primary.400');
+  }
   .dotted-line {
     background-image: linear-gradient(
       0deg,

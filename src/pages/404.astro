@@ -1,0 +1,28 @@
+---
+import { SectionContainer, Button } from '@/components'
+import Layout from '@/layouts/Layout.astro'
+import { useTranslations, getLangFromUrl, languages } from '@/i18n'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((locale) => ({ params: { locale } }))
+}
+
+const activeLang = getLangFromUrl(Astro.url)
+const t = useTranslations(activeLang)
+---
+
+<Layout>
+  <SectionContainer as='main' class='flex items-center justify-center'>
+    <div class='mx-auto max-w-7xl px-6 py-32 text-center sm:py-40 lg:px-8'>
+      <p class='text-base font-semibold leading-8'>404</p>
+      <h1 class='mt-4 text-3xl font-bold tracking-tight sm:text-5xl'>{t('404.title')}</h1>
+      <p class='mt-4 text-base sm:mt-6'>{t('404.description')}</p>
+      <div class='mt-10 flex justify-center'>
+        <Button as='a' variant='naked' href={getRelativeLocaleUrl(activeLang, '/')}
+          ><span aria-hidden='true'>&larr;</span> {t('404.goHome')}</Button
+        >
+      </div>
+    </div>
+  </SectionContainer>
+</Layout>

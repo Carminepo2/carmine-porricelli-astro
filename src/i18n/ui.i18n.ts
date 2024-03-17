@@ -26,6 +26,14 @@ export const ui = {
     downloadCVButton: {
       label: 'Scarica CV',
       lastUpdated: 'Aggiornato il '
+    },
+    languagePicker: {
+      ariaLabel: 'Seleziona una lingua'
+    },
+    '404': {
+      title: 'Pagina non trovata',
+      description: 'Scusa, non sono riuscito a trovare la pagina che stavi cercando.',
+      goHome: 'Torna alla home'
     }
   },
   en: {
@@ -48,6 +56,14 @@ export const ui = {
     downloadCVButton: {
       label: 'Download CV',
       lastUpdated: 'Last updated '
+    },
+    languagePicker: {
+      ariaLabel: 'Select a language'
+    },
+    '404': {
+      title: 'Page not found',
+      description: "Sorry, I couldn't find the page you were looking for.",
+      goHome: 'Go back to home'
     }
   }
 } as const satisfies Record<keyof typeof languages, unknown>

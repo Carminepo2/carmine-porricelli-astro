@@ -50,25 +50,33 @@ const LINE_PORTRAIT_SVG_PATH_ID = 'animated-line-portrait-svg-path'
   const svgLinePath = document.getElementById(LINE_PORTRAIT_SVG_PATH_ID)
   const restartButton = document.getElementById(RESTART_ANIMATION_BUTTON_ID)
 
-  function onAnimationEnd(ctx) {
-    if (ctx.animationName !== 'draw-line-portrait') return
+  function disableRestartButton() {
+    restartButton.disabled = true
+    restartButton.style.opacity = '0'
+  }
+
+  function enableRestartButton() {
     restartButton.disabled = false
     restartButton.style.opacity = '1'
   }
 
+  function onAnimationEnd(ctx) {
+    if (ctx.animationName === 'draw-line-portrait') {
+      enableRestartButton()
+    }
+    if (ctx.animationName === 'erase-line-portrait') {
+      svgLinePath.classList.remove(ERASE_ANIMATION_CLASSNAME)
+      svgLinePath.classList.add(DRAW_ANIMATION_CLASSNAME)
+    }
+  }
+
   function onAnimationStart() {
-    restartButton.disabled = true
-    restartButton.style.opacity = '0'
+    disableRestartButton()
   }
 
   function onRestartButtonClick() {
     svgLinePath.classList.remove(DRAW_ANIMATION_CLASSNAME)
     svgLinePath.classList.add(ERASE_ANIMATION_CLASSNAME)
-
-    setTimeout(() => {
-      svgLinePath.classList.remove(ERASE_ANIMATION_CLASSNAME)
-      svgLinePath.classList.add(DRAW_ANIMATION_CLASSNAME)
-    }, 600)
   }
 
   svgLinePath.addEventListener('animationend', onAnimationEnd)
