@@ -6,6 +6,7 @@ import { join } from 'path'
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://www.carmineporricelli.it',
   integrations: [tailwind(), generateLocaleAstroPages()],
   i18n: {
     defaultLocale: 'it',
