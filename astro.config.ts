@@ -3,14 +3,25 @@ import tailwind from '@astrojs/tailwind'
 import type { AstroIntegration } from 'astro'
 import { copyFileSync, existsSync, lstatSync, mkdirSync, readdirSync } from 'fs'
 import { join } from 'path'
+import sitemap from '@astrojs/sitemap'
+import { defaultLang, languages } from './src/i18n'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.carmineporricelli.it',
-  integrations: [tailwind(), generateLocaleAstroPages()],
+  integrations: [
+    tailwind(),
+    generateLocaleAstroPages(),
+    sitemap({
+      i18n: {
+        defaultLocale: defaultLang,
+        locales: languages
+      }
+    })
+  ],
   i18n: {
-    defaultLocale: 'it',
-    locales: ['en', 'it']
+    defaultLocale: defaultLang,
+    locales: Object.keys(languages)
   },
   build: {
     inlineStylesheets: 'always'
@@ -26,12 +37,12 @@ function generateLocaleAstroPages(): AstroIntegration {
   const LOCALE_DIR_NAME = '[locale]'
   const PAGES_DIR = 'src/pages'
   const LOCALE_DIR = join(PAGES_DIR, LOCALE_DIR_NAME)
-
   function copyAllFilesInDir(srcDir: string, destDir: string): void {
     if (!existsSync(destDir)) {
-      mkdirSync(destDir, { recursive: true })
+      mkdirSync(destDir, {
+        recursive: true
+      })
     }
-
     const files = readdirSync(srcDir)
     for (const file of files) {
       if (file === LOCALE_DIR_NAME) continue
@@ -44,7 +55,6 @@ function generateLocaleAstroPages(): AstroIntegration {
       copyFileSync(srcFile, destFile)
     }
   }
-
   return {
     name: 'GenerateLocaleAstroPages',
     hooks: {
