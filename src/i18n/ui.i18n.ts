@@ -14,7 +14,7 @@ export const ui = {
       toptitle: 'Ciao, io sono',
       title: 'Carmine Porricelli.',
       subtitle:
-        'Sono uno stakanovista con anni di esperienza professionale alle spalle. Sviluppatore autodidatta. Sempre disponibile per imparare, adoro lavorare in gruppo.',
+        'Sviluppatore autodidatta. Sempre disponibile per imparare, adoro lavorare in gruppo.',
       goToGithubBtnAriaLabel: 'Vai al mio GitHub',
       goToLinkedinBtnAriaLabel: 'Vai al mio LinkedIn'
     },
@@ -44,7 +44,7 @@ export const ui = {
       toptitle: "Hi, I'm",
       title: 'Carmine Porricelli',
       subtitle:
-        'I am a workaholic with years of professional experience. Self-taught developer. Always available to learn, I love working in a team.',
+        'Self-taught developer. Always available to learn, I love working in a team.',
       goToGithubBtnAriaLabel: 'Go to my GitHub',
       goToLinkedinBtnAriaLabel: 'Go to my LinkedIn'
     },
